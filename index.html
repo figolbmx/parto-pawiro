@@ -1,0 +1,70 @@
+<html>
+<title>Parto Pawiro Family Tree</title>
+<style>
+/*CSS*/
+html, body{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin:0;
+  overflow: hidden;
+  font-family: Helvetica;
+}
+#tree{
+  width:100%;
+  height:100%;
+}
+
+</style>
+<body>
+
+<!--HTML-->
+<script src="https://balkan.app/js/FamilyTree.js"></script>
+<div id="tree"></div>
+
+<!--
+DOCS:
+https://code.balkan.app/family-tree-js/royal-family-tree#JS 
+--><!--HTML-->
+<div id="tree"></div>
+
+<!--
+DOCS:
+https://code.balkan.app/family-tree-js/royal-family-tree#JS 
+-->
+
+
+<script src="https://balkan.app/js/FamilyTree.js"></script>
+<script>
+//JavaScript
+var options = getOptions();
+
+var chart = new FamilyTree(document.getElementById("tree"), {
+    mouseScrool: FamilyTree.none,
+    scaleInitial: options.scaleInitial,
+    siblingSeparation: 120,
+    template: 'john',
+    nodeBinding: {
+        field_0: "name",
+        field_1: "title",
+        field_2 : "bday",
+        img_0: "img",
+    }
+});
+
+
+chart.load([
+  { id: 1, pids: [2,3], fid:8, mid:7, name: "Исаев Игорь", title: "Prince of Wales", bday :"23.07.1981", img: "https://cdn.balkan.app/shared/f8.png", gender: 'male' },
+    { id: 2, pids: [1,6], name: "Исаева Светлана", title: "Princess of Wales", img: "https://cdn.balkan.app/shared/f9.png", gender: 'female' },
+    { id: 3, pids: [1], name: "Кодаченко Наталья", title: "Duchess of Cornwall", img: "https://cdn.balkan.app/shared/f7.png", gender: 'female' },  
+  { id: 4, fid: 1, mid:3, name: "Исаев Павел", title: "Prince of Wales", img: "https://cdn.balkan.app/shared/f8.png", gender: 'male' },
+{ id: 5, mid:2, fid:6, name: "Баталин Артем", title: "Prince of Wales", img: "https://cdn.balkan.app/shared/f8.png", gender: 'male' },
+ { id: 6, pids: [2],  name: "Баталин Андрей", title: "Prince of Wales", img: "https://cdn.balkan.app/shared/f8.png", gender: 'male' },   
+{ id:7, pids:[8], name: "Исаева Татьяна Николаевна", title: "Prince of Wales", img: "https://cdn.balkan.app/shared/f7.png", gender: 'female' },     
+{ id:8, pids:[7,13], name: "Исаев Виолин Владимирович", title: "Prince of Wales", img: "https://cdn.balkan.app/shared/f8.png", gender: 'male' },
+ { id: 11, fid:8, mid:13, pids:[12], name: "Исаев Виктор", title: "Prince of Wales", bday :"23.07.1981", img: "https://cdn.balkan.app/shared/f8.png", gender: 'male' },
+ { id: 12, pids:[11], name: "Исаева Елена", title: "Prince of Wales", bday :"23.07.1981", img: "https://cdn.balkan.app/shared/f7.png", gender: 'female' }, 
+</script>
+
+</body>
+</html>

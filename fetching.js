@@ -3,7 +3,7 @@ window.fetchFamilyData = function () {
   // Variables for Google Sheets API integration
   const spreadSheetName = "family-guy"; // Name of the Google Sheets spreadsheet
   const spreadSheetId = "1PNOyJh2a5RVcvDzGMztuV5c61b-Ouye12mzD1ImUzww"; // ID of the Google Sheets spreadsheet
-  const apiKey = "AIzaSyDpIfv3g92V_-NpRrGRRvRv8eidaSDHWgY"; // API key for accessing Google Sheets API
+  // const apiKey = "AIzaSyDpIfv3g92V_-NpRrGRRvRv8eidaSDHWgY"; // API key for accessing Google Sheets API
 
   // Check if API key is defined in environment variables and use it if available
   if (process.env.GOOGLE_SHEETS_API_KEY) {
@@ -12,7 +12,7 @@ window.fetchFamilyData = function () {
   
   // Return a promise for fetching family data from Google Sheets
   return new Promise((resolve, reject) => {
-    fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadSheetId}/values/${spreadSheetName}?alt=json&key=${apiKey}`)
+    fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadSheetId}/values/${spreadSheetName}?alt=json&key=AIzaSyDpIfv3g92V_-NpRrGRRvRv8eidaSDHWgY`)
       .then(response => response.json()) // Parse response as JSON
       .then(data => {
         const jsonResponse = data;

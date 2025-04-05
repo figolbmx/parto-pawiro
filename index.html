@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Family Tree</title> <!-- Title of the webpage -->
+  <link rel="icon" type="image/png" href="family.png"> <!-- Favicon for the webpage -->
+  <link rel="stylesheet" type="text/css" href="main.css"> <!-- Link to the CSS file for styling -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Bootstrap CSS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script> <!-- Bootstrap JS -->
+  <script src="familytree.js"></script> <!-- FamilyTree.js library -->
+  <script src="fetching.js"></script> <!-- JavaScript file for fetching family data -->
+  <script src="main.js"></script> <!-- JavaScript file for initializing the family tree -->
+</head>
+
+<body>
+
+  <!-- Container for displaying total family members -->
+  <div id="family-info" style="text-align: center; margin-top: 3%;">
+    <h2>Total Family Members: <span id="total-members"></span></h2>
+  </div>
+
+  <!-- Container for selecting tree orientation -->
+  <div id="orientation-dropdown-container" style="margin-top: 1%;">
+    <label for="orientation-dropdown" style="margin-right: 10px; ">Select Orientation:</label> <!-- Label for the dropdown -->
+    <select id="orientation-dropdown" class="form-select"> <!-- Dropdown for selecting tree orientation -->
+      <option value="0">Top</option>
+      <option value="1">Bottom</option>
+      <option value="2">Right</option>
+      <option value="3">Left</option>
+      <option value="4">Top Left</option>
+      <option value="5" selected>Bottom Left</option>
+      <option value="6">Right Top</option>
+      <option value="7">Left Top</option>
+    </select>
+  </div>
+
+  <!-- Loading spinner -->
+  <div id="loading-spinner" class="spinner"></div>
+
+  <!-- Container for rendering the family tree -->
+  <div id="tree" style="margin-top: 2%;"></div>
+
+</body>
+
+</html>
